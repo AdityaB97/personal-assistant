@@ -42,7 +42,8 @@ def prompter():
         num = input("I love math! What number?")
         dispatcher(command, num)
     elif command == "stocks": # TODO
-        pass
+        question = input("Sure! What stocks would you like to know about?")
+        dispatcher(command, question)
     else:
         dispatcher(command, "")
 
