@@ -7,9 +7,9 @@ def square(n):
     """ Square numbers  
 
     >>> square(2)
-    4 
+    4
     >>> square(3)
-    8
+    9
     """
     return n*n
 
@@ -34,16 +34,17 @@ def dispatcher(command, arg):
 def prompter():
     """ asks for things """
 
-    command = (input("How may I help you?: [weather, square, go away, bye]")).lower()
+    command = (input("How may I help you?: [weather, square, go away, bye, dance]")).lower()
     if command == "weather":
         city = input("Sure thing! What city?")
         dispatcher(command, city)
     if command == "square":
         num = input("I love math! What number?")
         dispatcher(command, num)
-    elif command == "stocks": # TODO
-        question = input("Sure! What stocks would you like to know about?")
-        dispatcher(command, question)
+    if command == "stocks": # TODO
+        pass
+    elif command == "dance":
+        dance()
     else:
         dispatcher(command, "")
 
@@ -63,9 +64,16 @@ def starter(cliargs):
         prompter()
 
 #this is a comment
-def dance():
-    """Every personal assistant should know how to dance!"""
-    print("left right chachacha left right chacha\n left left right right dip up chachacha")
+def dance(): # Nice dance function lol
+    """Every personal assistant should know how to dance!
+    TODO: Add more dances
+
+    >>> dance()
+    left right chachacha left right chacha
+    left left right right dip up chachacha
+
+    """
+    print("left right chachacha left right chacha\nleft left right right dip up chachacha")
     return
 
 if __name__ == "__main__":
